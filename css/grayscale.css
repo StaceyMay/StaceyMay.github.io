@@ -248,6 +248,16 @@ a:focus {
     margin-top: 250px;
   }
 }
+
+
+.about-us{
+  height: auto;
+  width: auto;
+  max-height: 200px;
+  max-width: 150px;
+  border-radius: 50%;
+}
+
 .btn {
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
