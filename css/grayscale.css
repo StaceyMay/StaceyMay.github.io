@@ -250,8 +250,12 @@ a:focus {
 }
 
 
-.about-us{
-
+.img.us{
+  height: auto;
+  width: auto;
+  max-height: 200px;
+  max-width: 150px;
+  border-radius: 50%;
 }
 
 .btn {
