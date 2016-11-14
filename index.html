@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-<!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-    <!-- jslick java plugin -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <!-- highcharts java plugin -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,15 +98,7 @@
                 <p>Updating this later</p>
                 <p>San Francisco, CA</p>
             </div>
-            <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
-                  <div><h3>1</h3></div>
-                  <div><h3>2</h3></div>
-                  <div><h3>3</h3></div>
-                  <div><h3>4</h3></div>
-                  <div><h3>5</h3></div>
-                  <div><h3>6</h3></div>
-                </div>
-        </div>
+            <div id="container" style="width:100%; height:400px;"></div>
     </section>
 
     <!-- Download Section -->
@@ -174,8 +164,50 @@
     <!-- Theme JavaScript -->
     <script src="js/grayscale.min.js"></script>
 
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-    <!-- jslick java plugin -->
+    <script> 
+    $(function () { 
+    var myChart = Highcharts.chart('container', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+});
+The code above uses the jQuery specific way of launching code on document ready, as explained at the jQuery website.
+
+If you are inserting a Stock chart, there is a separate constructor method called Highcharts.StockChart. In these charts, typically the data is supplied in a separate JavaScript array, either taken from a separate JavaScript file or by an Ajax call to the server.
+
+var chart1; // globally available
+$(function() {
+       chart1 = Highcharts.stockChart('container', {
+         rangeSelector: {
+            selected: 1
+         },
+         series: [{
+            name: 'USD to EUR',
+            data: usdtoeur // predefined JavaScript array
+         }]
+      });
+   });
+    </script>
+    
 
 </body>
 
