@@ -98,6 +98,7 @@
                 <p>Updating this later</p>
                 <p>San Francisco, CA</p>
             </div>
+            </div>
             <div id="container" style="width:100%; height:400px;"></div>
     </section>
 
@@ -171,42 +172,28 @@
             type: 'bar'
         },
         title: {
-            text: 'Fruit Consumption'
+            text: 'Best Rapper'
         },
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+            categories: ['Fetty Wap', 'Drake', 'Chance the Rapper']
         },
         yAxis: {
             title: {
-                text: 'Fruit eaten'
+                text: 'Votes by Gender'
             }
         },
         series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
+            name: 'Men',
+            data: [1, 2, 4]
         }, {
-            name: 'John',
+            name: 'Women',
             data: [5, 7, 3]
         }]
     });
-});
-The code above uses the jQuery specific way of launching code on document ready, as explained at the jQuery website.
-
-If you are inserting a Stock chart, there is a separate constructor method called Highcharts.StockChart. In these charts, typically the data is supplied in a separate JavaScript array, either taken from a separate JavaScript file or by an Ajax call to the server.
-
-var chart1; // globally available
-$(function() {
-       chart1 = Highcharts.stockChart('container', {
-         rangeSelector: {
-            selected: 1
-         },
-         series: [{
-            name: 'USD to EUR',
-            data: usdtoeur // predefined JavaScript array
-         }]
-      });
-   });
+    });
     </script>
+    <script type="text/javascript" src="/js/themes/gray.js"></script>
+
     
 
 </body>
